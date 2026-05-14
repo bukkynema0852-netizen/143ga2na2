@@ -496,15 +496,11 @@ accordions.forEach((accordion) => {
 </audio>
 
 <script>
-window.addEventListener("load", () => {
+window.addEventListener("click", () => {
 
-  const music = document.getElementById("bgMusic");
-
-  document.body.addEventListener("click", () => {
-    music.play();
+  document.getElementById("bgMusic").play(); 
   }, { once: true });
-
-});
+  
 </script>
 
 <script>
