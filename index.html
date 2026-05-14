@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Oremi ❤️</title>
+
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #3a2f0b);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  position:relative;
+}
+
+.hero h1{
+  font-size:4rem;
+  color:#ffd700;
+  margin-bottom:20px;
+  animation: fadeDown 1.5s ease;
+}
+
+.hero p{
+  max-width:700px;
+  line-height:1.8;
+  font-size:1.1rem;
+  color:#f5f5f5;
+  animation: fadeUp 1.5s ease;
+}
+
+/* SECTION STYLING */
+.section{
+  padding:70px 20px;
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.3rem;
+  margin-bottom:40px;
+  color:#ffd700;
+}
+
+/* ACCORDION */
+.accordion{
+  margin-bottom:20px;
+  border-radius:16px;
+  overflow:hidden;
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,215,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.accordion-header{
+  width:100%;
+  padding:20px;
+  background:none;
+  border:none;
+  color:white;
+  font-size:1.2rem;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:0.3s;
+}
+
+.accordion-header:hover{
+  background: rgba(255,215,0,0.1);
+}
+
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.6s ease;
+  padding:0 20px;
+}
+
+.accordion-content-inner{
+  padding-bottom:25px;
+}
+
+.accordion-content p{
+  margin:15px 0;
+  line-height:1.8;
+  color:#f2f2f2;
+}
+
+/* PHOTOS */
+.photo-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:15px;
+}
+
+.photo-row img{
+  width:220px;
+  height:260px;
+  object-fit:cover;
+  border-radius:14px;
+  border:3px solid rgba(255,215,0,0.4);
+  transition:0.4s;
+}
+
+.photo-row img:hover{
+  transform:scale(1.04);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.gallery img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:18px;
+  transition:0.4s;
+  border:3px solid rgba(255,215,0,0.2);
+}
+
+.gallery img:hover{
+  transform:translateY(-5px) scale(1.02);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:#ddd;
+  font-size:0.95rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:2.7rem;
+  }
+
+  .hero p{
+    font-size:1rem;
+  }
+
+  .photo-row{
+    justify-content:center;
+  }
+
+  .photo-row img{
+    width:100%;
+    max-width:320px;
+    height:300px;
+  }
+}
+#password-screen{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.password-box{
+  width:90%;
+  max-width:350px;
+  background:#1b1b1b;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  border:2px solid gold;
+}
+
+.password-box h2{
+  color:gold;
+  margin-bottom:10px;
+}
+
+.password-box p{
+  color:white;
+  margin-bottom:20px;
+}
+
+.password-box input{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+.password-box button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:gold;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#errorMessage{
+  color:#ff7b7b;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="password-screen">
+  <div class="password-box">
+
+    <h2>Look who’s here... enter password, cutie ❤️</h2>
+    <p>For you, Gene 🤭</p>
+
+    <input type="password" id="passwordInput" placeholder="Enter password">
+
+    <button id="openBtn">Cum in... sorry slide in</button>
+
+    <p id="errorMessage"></p>
+
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Happy Birthday, Rooneyyyyyyyyy! ❤️</h1>
+
+  <p>
+    From 2022 till now, we have grown through different seasons,
+    different memories, different versions of ourselves and somehow our friendship only became amazing.
+    You make life brighter just by being in it 💖 I am really lucky to have you as my friend.
+    <br><br>
+    just small pieces of days that felt so loved,
+    appreciated and special because of you.
+  </p>
+</section>
+
+<!-- JOURNEY SECTION -->
+<section class="section">
+  <h2 class="section-title">It's you, me, us! ✨</h2>
+
+  <!-- 2022 -->
+  <div class="accordion">
+    <button class="accordion-header">
+      2022
+      <span>+</span>
+    </button>
+
+    <div class="accordion-content">
+      <div class="accordion-content-inner">
+
+        <p>
+          First meet: 16 December, 2022.
+            This was where everything started.
+            I was so nervous, but you were so kind and welcoming.
+            I remember thinking, "Wow, this person is really nice and has a cute smile."
+                We had such a great time talking and laughing and I felt like we had known each other for a long time.
+                That day was the beginning of something really special and I'm so grateful for it.
+        </p>
+
+        <div class="photo-row">
+          <img src="2022-1.jpeg" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2023 -->
+  <div class="accordion">
+    <button class="accordion-header">
+      2023
+      <span>+</span>
+    </button>
+
+    <div class="accordion-content">
+      <div class="accordion-content-inner">
+
+        <p>
+          28 april, 2023. The day my display name changed to "New Naimat" on your phone. 
+            This year came with deeper connections (keeping up with Rooney late night show),
+          I got to know you were a drummer in 2023 but somehow got surprised anytime you mentioned it and the memories from our late night shows... I still replay them in my head.
+         You told me to start skits on IG instead of admitting that I'm funny. You became my favorite person without even trying.
+         Second time we met: 30 april, 2023. This was the day I realized that you are the most sweetest person I know. You skipped Man Utd match for me, you said you guys were not really in a good form and I was so grateful for that.
+         Thank you for always showing up for me. Everytime you figured I needed you, you will say to me "lay it on me". Ngl, that's too sweet.
+        </p>
+
+        <div class="photo-row">
+          <img src="2023-1.jpeg" alt="">
+          <img src="2023-2.jpeg" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2024 -->
+  <div class="accordion">
+    <button class="accordion-header">
+      2024
+      <span>+</span>
+    </button>
+
+    <div class="accordion-content">
+      <div class="accordion-content-inner">
+
+        <p>
+        First time we spoke in 2024: 28 February, 2024. 
+        I was so happy to text you again after airing you for 3 months and I remember thinking, 
+        "Wow, I really missed this person." 
+        We have had such great time catching up and making new memories together ever since. 
+        Those three months were the most I have ever overthought and longed for someone.
+        Looking back, I am glad I survived that overthinking phase and chose this friendship.
+        I genuinely don't know what my life would feel like without you. 
+        Your words, "Welcome back to my world Nahee" felt so good. 
+        Thank you, I was happy to be back and I still am. 
+        A lot of things happened in 2024. I felt like we had a lot of "firsts" between us this year and I am so grateful for all of them.
+        I am so grateful for you and our friendship. 
+        You are truly one of a kind.
+        </p>
+
+        <div class="photo-row">
+          <img src="2024-1.jpeg" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2025 -->
+  <div class="accordion">
+    <button class="accordion-header">
+      2025
+      <span>+</span>
+    </button>
+
+    <div class="accordion-content">
+      <div class="accordion-content-inner">
+
+        <p>
+        Another year, another reminder that
+        some people become home to your heart.
+        Thank you for the constant support, you were always checking in. 
+        I didn't feel alone since September 2024 because of you. You made living far from home easier. 
+        You made me feel loved and cared for even from a distance.
+        You were a constant source of strength and comfort in my life. 
+        Talmbout, "talk to me whenever about whatever".  Thank you, oremi owon.
+        </p>
+
+        <div class="photo-row">
+          <img src="2025-1.jpeg" alt="">
+          <img src="2025-2.jpeg" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <!-- 2026 -->
+  <div class="accordion">
+    <button class="accordion-header">
+      2026
+      <span>+</span>
+    </button>
+
+    <div class="accordion-content">
+      <div class="accordion-content-inner">
+
+        <p>
+          Would I be wrong to say that the yellow app has been the highlight of my 2026 so far?
+          I just want you to know how much I appreciate you for being available to talk to me whenever I needed you.
+          Across all platforms, from green app to IG to yellow app, you have really been present and it means more to me than you probably know.
+          Thank you for the consistency, the conversations, the voice notes, the photos, the reels, the snaps, the phone calls, the check-ins, the stickers, the video calls, 
+          the late nights, the long read more paragraphs, the support and simply being you while being there for me.
+        </p>
+
+        <div class="photo-row">
+          <img src="2026-1.jpeg" alt="">
+          <img src="2026-2.jpeg" alt="">
+          <img src="2026-3.jpeg" alt="">
+          <img src="2026-4.jpeg" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2 class="section-title"> From me to you 🤭📸</h2>
+
+  <div class="gallery">
+    <img src="gallery1.jpeg" alt="">
+    <img src="gallery2.jpeg" alt="">
+    <img src="gallery3.jpeg" alt="">
+    <img src="gallery4.jpeg" alt="">
+  </div>
+</section>
+
+<footer>
+  Created by Nahee… with suspicious amounts of love 💛❤️
+</footer>
+
+<script>
+const accordions = document.querySelectorAll(".accordion");
+
+accordions.forEach((accordion) => {
+
+  const header = accordion.querySelector(".accordion-header");
+  const content = accordion.querySelector(".accordion-content");
+  const icon = header.querySelector("span");
+
+  header.addEventListener("click", () => {
+
+    const isOpen = content.style.maxHeight;
+
+    // Close all first
+    document.querySelectorAll(".accordion-content").forEach((item) => {
+      item.style.maxHeight = null;
+    });
+
+    document.querySelectorAll(".accordion-header span").forEach((item) => {
+      item.textContent = "+";
+    });
+
+    // Open clicked one
+    if(!isOpen){
+      content.style.maxHeight = content.scrollHeight + "px";
+      icon.textContent = "−";
+    }
+  });
+
+});
+</script>
+
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", () => {
+
+  const music = document.getElementById("bgMusic");
+
+  document.body.addEventListener("click", () => {
+    music.play();
+  }, { once: true });
+
+});
+</script>
+
+<script>
+
+document.getElementById("openBtn").addEventListener("click", function(){
+
+  const password = document.getElementById("passwordInput").value;
+
+  if(password === "knockknock"){
+
+    document.getElementById("password-screen").style.display = "none";
+
+  }
+
+  else{
+
+    document.getElementById("errorMessage").innerText = "Wrong password ❤️";
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
